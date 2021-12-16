@@ -19,12 +19,16 @@ const GenChar = (props) => {
     charisma: "Charisma:",
     race: "Race:",
     level: "Level:",
+    alignment: "Alignment:",
+    gender: "Gender:",
   };
   const keys = [
     "name",
     "race",
     "_class",
     "level",
+    "alignment",
+    "gender",
     "strength",
     "dexterity",
     "constitution",

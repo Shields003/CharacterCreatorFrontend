@@ -1,5 +1,3 @@
-import dice from "./dice";
-
 //Stats random dice rolls 2-6
 const roll_dice = (number_of_rolls) => {
   let total = 0;
@@ -430,9 +428,7 @@ const get_character_choices = (count) => {
       new_character.hitPoints = hit_dice(new_character.level);
     }
     if (new_character._class === "Bard") {
-      new_character.wisdom = Math.floor(
-        (new_character.charisma = roll_dice(4))
-      );
+      new_character.wisdom = Math.floor((new_character.charisma = hit_dice(4)));
       new_character.wisdom += Math.floor(new_character.level / 5) + 1;
       new_character.charisma += Math.floor(new_character.level / 4) + 1;
       new_character.hitDice = "1d6";

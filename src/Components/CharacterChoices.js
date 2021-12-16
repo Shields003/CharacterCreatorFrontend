@@ -30,10 +30,9 @@ import {
 //
 
 import get_character_choices from "../Functions/character_choices";
-import CharSelect from "../CharacterPage/CharSelect";
 import GenChar from "../CharacterPage/GenChar";
 import useCharacter from "../hooks/useCharacter";
-var superheroes = require("superheroes");
+const superheroes = require("superheroes");
 
 const mySuperHeroName = superheroes.random();
 
@@ -204,14 +203,7 @@ const CharacterChoices = () => {
           <DialogContentText id="alert-dialog-description">
             Would you like to use the following Character?
           </DialogContentText>
-          <CharSelect
-            // selected_character={selected_character}
-            // selected_name={character_name}
-            combined_character={{
-              ...selected_character,
-              name: mySuperHeroName,
-            }}
-          />
+
           <GenChar
             // selected_character={selected_character}
             // selected_name={character_name}

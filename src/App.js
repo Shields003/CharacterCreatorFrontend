@@ -38,7 +38,6 @@ import SavedCharacters from "./CharacterPage/SavedCharacters";
 import SignIn from "./CharacterPage/SignIn";
 import "./App.css";
 import get_character_choices from "./Functions/character_choices";
-import CharSelect from "./CharacterPage/CharSelect";
 import GenChar from "./CharacterPage/GenChar";
 import CharacterChoices from "./Components/CharacterChoices";
 import { Box } from "@mui/system";
