@@ -1,0 +1,9 @@
+build
+*/build
+api-resources
+*/api-resources
+.git/
+.gradle
+.idea
+*.Dockerfile
+docker-compose.yml

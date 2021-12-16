@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  generate:
+    build:
+      context: .
+      dockerfile:  Generate.Dockerfile
+    environment:
+      API_RESOURCE_DIRECTORY: /home/generate/api-resources
+      GENERATED_KOTLIN_TARGET_DIRECTORY: /home/generate/kotlin
+    volumes:
+      - "./api-resources/:/home/generate/api-resources/:rw"
+      - "./web/src/main/:/home/generate/:rw"
+    network_mode: host

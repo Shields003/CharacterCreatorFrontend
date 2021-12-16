@@ -73,7 +73,7 @@ const CharacterChoices = () => {
   const navigate = useNavigate();
 
   const handle_choices_click = () => {
-    const choices = get_character_choices(5);
+    const choices = get_character_choices(10);
     set_character_data(choices);
     // const stats = get_character_stats();
     // set_character_data(stats);
@@ -124,6 +124,7 @@ const CharacterChoices = () => {
                     <TableCell>Race</TableCell>
                     <TableCell>Class</TableCell>
                     <TableCell>Alignment</TableCell>
+                    <TableCell>Gender</TableCell>
                     <TableCell align="center">Level</TableCell>
                     <TableCell align="center">Strength</TableCell>
                     <TableCell align="center">Dexterity</TableCell>
@@ -153,6 +154,9 @@ const CharacterChoices = () => {
                           <TableCell>{character._class}</TableCell>
                           <TableCell align="center">
                             {character.alignment}
+                          </TableCell>
+                          <TableCell align="center">
+                            {character.gender}
                           </TableCell>
                           <TableCell align="center">
                             {character.level}

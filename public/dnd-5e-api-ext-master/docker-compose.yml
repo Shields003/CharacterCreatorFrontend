@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  web:
+    ports:
+      - "8080:80"
+    build:
+      context: .
+      dockerfile:  Web.Dockerfile
+  api:
+    build:
+      context: .
+      dockerfile: Api.Dockerfile
+    network_mode: host
+    environment:
+      API_RESOURCE_DIRECTORY: /home/api/api-resources
+    volumes:
+      - "./api-resources/:/home/api/api-resources/:rw"

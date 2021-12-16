@@ -1,3 +1,5 @@
+import dice from "./dice";
+
 //Stats random dice rolls 2-6
 const roll_dice = (number_of_rolls) => {
   let total = 0;
@@ -87,8 +89,10 @@ const get_random_class = () => {
     "Sorcerer",
     "Palladin",
     "Barbarian",
+    "Bard",
+    "Warlock",
   ];
-  return _class[Math.floor(Math.random() * 10)];
+  return _class[Math.floor(Math.random() * 12)];
 };
 
 //Hair and eye colors
@@ -231,8 +235,7 @@ const get_character_choices = (count) => {
   const choices = [];
   for (let i = 0; i < count; i++) {
     const level = get_random_level();
-    const expPoints = level * 2500;
-
+    const expPoints = level * 2500 - Math.floor(Math.random() * 2499);
     const new_character = {
       race: get_random_race(),
       _class: get_random_class(),
@@ -240,7 +243,6 @@ const get_character_choices = (count) => {
       alignment: get_random_alignment(),
       strength: roll_dice(3),
       liftBend: roll_dice(4),
-
       carryWeight: roll_dice(),
       dexterity: roll_dice(3),
       constitution: roll_dice(3),
@@ -252,6 +254,7 @@ const get_character_choices = (count) => {
       hairColor: get_random_hair(),
       eyeColor: get_random_eye(),
       hitPoints: hit_dice(level),
+
       expPoints,
       dodge: 11,
       hitDice: hitDice,
@@ -266,7 +269,6 @@ const get_character_choices = (count) => {
       speed: 30,
       saveThrow: 11,
       initiative: 0,
-
       gender: get_random_sex(),
       age: get_random_age(),
     };
@@ -278,6 +280,11 @@ const get_character_choices = (count) => {
   const bonus_choices = choices.map((character, j) => {
     const new_character = { ...character };
     //RACE Bonus
+
+    if (new_character.gender === "Female") {
+      new_character.charWeight -= Math.floor(Math.random() * 25) + 1;
+      new_character.charHeight -= Math.floor(Math.random() * 5) + 1;
+    }
 
     if (new_character.race === "Elf") {
       new_character.dexterity += 2;
@@ -388,6 +395,15 @@ const get_character_choices = (count) => {
       new_character.hitDice = "1d4";
       new_character.hitPoints = hit_dice4(new_character.level);
     }
+    if (new_character._class === "Warlock") {
+      new_character.intelligence = Math.floor(
+        (new_character.intelligence = roll_dice(3) + 3)
+      );
+      new_character.intelligence += Math.floor(new_character.level / 4) + 1;
+      new_character.constitution += Math.floor(new_character.level / 5) + 1;
+      new_character.hitDice = "1d4";
+      new_character.hitPoints = hit_dice4(new_character.level);
+    }
     if (new_character._class === "Ranger") {
       new_character.dexterity = Math.floor(
         (new_character.dexterity = roll_dice(3) + 3)
@@ -410,6 +426,15 @@ const get_character_choices = (count) => {
       new_character.wisdom = Math.floor((new_character.wisdom = roll_dice(4)));
       new_character.wisdom += Math.floor(new_character.level / 4) + 1;
       new_character.constitution += Math.floor(new_character.level / 5) + 1;
+      new_character.hitDice = "1d6";
+      new_character.hitPoints = hit_dice(new_character.level);
+    }
+    if (new_character._class === "Bard") {
+      new_character.wisdom = Math.floor(
+        (new_character.charisma = roll_dice(4))
+      );
+      new_character.wisdom += Math.floor(new_character.level / 5) + 1;
+      new_character.charisma += Math.floor(new_character.level / 4) + 1;
       new_character.hitDice = "1d6";
       new_character.hitPoints = hit_dice(new_character.level);
     }
@@ -485,12 +510,6 @@ const get_character_choices = (count) => {
     new_character.intimidate =
       new_character.intimidate - new_character.chaBonus;
     //Other adjustors
-
-    if (new_character.gender === "Female") {
-      new_character.weight = new_character.weight - 200;
-    } else {
-      new_character.weight = new_character.weight - 300;
-    }
 
     console.log(new_character.hitPoints);
     console.log(new_character.conBonus);

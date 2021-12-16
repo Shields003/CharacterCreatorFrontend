@@ -1,0 +1,11 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+.idea
+# Ignore Gradle build output directory
+build
+src/main/resources/api
+src/generated
+api-resources/*/
+*/api-resources
+*/src/generated
+generated/src/main/kotlin/dandd

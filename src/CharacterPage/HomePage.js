@@ -12,12 +12,15 @@ const HomePage = () => {
           sx={{
             display: "block",
             position: "flex",
-            zIndex: -5,
-            textAlign: "center",
             border: "double",
             borderColor: "maroon",
-            padding: "10px",
-            margin: "8px",
+            padding: "5px",
+            margin: "10px",
+            width: "flex",
+            //height: "550px",
+            //backgroundsize: "contain",
+            //backgroundrepeat: "no-repeat",
+            backgroundposition: "center",
           }}
         >
           <img
@@ -25,11 +28,17 @@ const HomePage = () => {
             alt="Dragon"
             style={{ margin: "0 auto", display: "block" }}
             display="block"
-            position="flex"
-            min-width="600px"
-            min-height="100%"
-            width="100%"
-            textAlign="center"
+            position="fixed"
+            textalign="center"
+            minheight="500px"
+            minwidth="850px"
+            height="800px"
+            width="1275px"
+            backgroundsize="contain"
+            backgroundrepeat="no-repeat"
+            backgroundposition="center"
+            backgroundcolor="maroon"
+            zindex="-3"
           ></img>
         </Box>
       </Grid>
