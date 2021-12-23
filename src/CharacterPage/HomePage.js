@@ -1,44 +1,49 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Grid } from "@mui/material";
-import { border, Box, margin } from "@mui/system";
-import { CenterFocusStrong, Home, Image } from "@mui/icons-material";
-
+import { border, Box, color, margin } from "@mui/system";
+import {
+  CenterFocusStrong,
+  Home,
+  Image,
+  PlayCircleFilledWhite,
+} from "@mui/icons-material";
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Paper } from "@mui/material";
 const HomePage = () => {
   return (
     <div>
       <Grid item xs={12}>
         <Box
           sx={{
-            display: "block",
-            position: "flex",
+            position: "fixed",
             border: "double",
             borderColor: "maroon",
             padding: "5px",
             margin: "10px",
-            width: "flex",
-            //height: "550px",
-            //backgroundsize: "contain",
-            //backgroundrepeat: "no-repeat",
-            backgroundposition: "center",
+            textalign: "center",
+            // backgroundsize: "contain",
+            // backgroundrepeat: "no-repeat",
+            // backgroundposition: "center",
           }}
         >
           <img
             src="http://img2.joyreactor.com/pics/post/full/art-CGI-dragon-3329461.jpeg"
             alt="Dragon"
-            style={{ margin: "0 auto", display: "block" }}
-            display="block"
+            style={{ margin: "0 auto", display: "flex" }}
             position="fixed"
             textalign="center"
-            minheight="500px"
-            minwidth="850px"
-            height="800px"
-            width="1275px"
-            backgroundsize="contain"
-            backgroundrepeat="no-repeat"
-            backgroundposition="center"
-            backgroundcolor="maroon"
-            zindex="-3"
+            zindex="-5"
           ></img>
         </Box>
       </Grid>
@@ -48,4 +53,180 @@ const HomePage = () => {
 
 HomePage.propTypes = {};
 
-export default HomePage;
+function SignUp(props) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      backgroundColor="rgba(255,255,255,.85)"
+      zindex="5"
+      {...props}
+    >
+      {"Copyright © "}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
+
+const theme = createTheme();
+
+export default function SignIn() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    // eslint-disable-next-line no-console
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+  };
+
+  return (
+    <Grid item xs={12}>
+      <Box
+        sx={{
+          display: "inline-flex",
+          position: "fixed",
+          border: "double",
+          borderColor: "maroon",
+          padding: "5px",
+          margin: "12px",
+          width: "100%",
+          minWidth: "1120px",
+          textalign: "center",
+          backgroundsize: "contain",
+          backgroundrepeat: "no-repeat",
+          backgroundposition: "center",
+          zindex: "-5",
+        }}
+      >
+        {/* <img
+          src="http://img2.joyreactor.com/pics/post/full/art-CGI-dragon-3329461.jpeg"
+          alt="Dragon"
+          style={{ margin: "0 auto", display: "flex" }}
+          position="fixed"
+          textalign="center"
+          width="100%"
+          backgroundsize="contain"
+          backgroundrepeat="no-repeat"
+          backgroundposition="center"
+          zindex="-5"
+        ></img> */}
+      </Box>
+
+      <ThemeProvider theme={theme}>
+        <Container
+          component="main"
+          maxWidth="xs"
+          backgroundColor="rgba(255,255,255,.85)"
+        >
+          <CssBaseline />
+          <div>
+            <Paper
+              sx={{
+                zindex: 5,
+                backgroundColor: "rgba(255,255,255,.95)",
+                border: "double",
+              }}
+              elevation={8}
+            >
+              <Box
+                sx={{
+                  marginTop: 1.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: "rgba(255,255,255,.85)",
+
+                    marginTop: 10,
+                    zindex: 10,
+                  }}
+                >
+                  <Typography component="h2" variant="h5">
+                    Sign in
+                  </Typography>
+                </Box>
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  sx={{ mt: 1, marginTop: "10px" }}
+                >
+                  <TextField
+                    sx={{
+                      backgroundColor: "rgba(255,255,255,.85)",
+                      border: "double",
+                    }}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    autoFocus
+                  />
+                  <Box
+                    sx={{
+                      backgroundColor: "rgba(255,255,255,.85)",
+                      border: "double",
+                    }}
+                  >
+                    <TextField
+                      sx={{
+                        backgroundColor: "rgba(255,255,255,.85)",
+                      }}
+                      margin="normal"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      id="password"
+                      autoComplete="current-password"
+                    />
+                  </Box>
+                  <FormControlLabel
+                    sx={{
+                      backgroundColor: "rgba(255,255,255,.95)",
+                    }}
+                    margin="normal"
+                    required
+                    fullWidth
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                  />
+                  <Button type="submit" fullWidth variant="contained">
+                    Sign In
+                  </Button>
+                  <Grid container>
+                    <Grid item>
+                      <Link href="#" variant="body2">
+                        Forgot password?
+                      </Link>
+                    </Grid>
+                    <Grid item>
+                      <Link href="#" variant="body2">
+                        {"Don't have an account? Sign Up"}
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Box>
+              <SignUp sx={{ mt: 8, mb: 4 }} />
+            </Paper>
+          </div>
+        </Container>
+      </ThemeProvider>
+    </Grid>
+  );
+}

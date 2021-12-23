@@ -1,4 +1,62 @@
+const get_random_main = () => {
+  const mainWeapon = [
+    "Long-Sword",
+    "Staff",
+    "Long-Bow",
+    "Dagger",
+    "Battle-Axe",
+    "Short-Sword",
+    "War-Hammer",
+  ];
+  return mainWeapon[Math.floor(Math.random() * 7)];
+};
+const get_start_equipment = () => {
+  const startEquip = ["Bed-Roll, 5 Torches, 40ft Rope, Flint, Water Skin, "];
+  return startEquip[Math.floor(Math.random(1))];
+};
+const get_start_equipment2 = () => {
+  const startEquip2 = ["Hooded Lantern, 5 Days Rations."];
+  return startEquip2[Math.floor(Math.random(1))];
+};
+const get_random_off = () => {
+  const offWeapon = [
+    "Long-Sword",
+    "Staff",
+    "Long-Bow",
+    "Dagger",
+    "Battle-Axe",
+    "Short-Sword",
+    "War-Hammer",
+  ];
+  return offWeapon[Math.floor(Math.random() * 7)];
+};
+const get_random_skill = () => {
+  const randSkill = [
+    "Athletics",
+    "Pick Locks",
+    "Persuasion",
+    "Acrobatics",
+    "Perception",
+    "Grappling",
+    "History",
+  ];
+  return randSkill[Math.floor(Math.random() * 7)];
+};
+const get_random_spell = () => {
+  const randSpell = [
+    "Magic-Missile",
+    "Detect Magic",
+    "Minor Healing",
+    "Flame Strike",
+    "Dispel Magic",
+    "Lighting Bolt",
+    "Chilling Grasp",
+  ];
+  return randSpell[Math.floor(Math.random() * 7)];
+};
+
 //Stats random dice rolls 2-6
+
 const roll_dice = (number_of_rolls) => {
   let total = 0;
   for (let i = 0; i < number_of_rolls; i++) {
@@ -252,7 +310,11 @@ const get_character_choices = (count) => {
       hairColor: get_random_hair(),
       eyeColor: get_random_eye(),
       hitPoints: hit_dice(level),
-
+      mainWeapon: get_random_main(),
+      randSpell: get_random_spell(),
+      randSkill: get_random_skill(),
+      startEquip: get_start_equipment(),
+      startEquip2: get_start_equipment2(),
       expPoints,
       dodge: 11,
       hitDice: hitDice,

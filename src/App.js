@@ -30,7 +30,7 @@ import ButtonAppBar from "./ButtonAppBar";
 import NavDrawer from "./NavDrawer";
 import { Render } from "@testing-library/react";
 import { Block, Navigation } from "@mui/icons-material";
-//
+import SkillTransfer from "./CharacterPage/SkillTransfer";
 import NewChar from "./CharacterPage/NewChar";
 import HomePage from "./CharacterPage/HomePage";
 import BlankCharacter from "./CharacterPage/BlankCharacter";
@@ -41,11 +41,11 @@ import get_character_choices from "./Functions/character_choices";
 import GenChar from "./CharacterPage/GenChar";
 import CharacterChoices from "./Components/CharacterChoices";
 import { Box } from "@mui/system";
-
+import SpellTransfer from "./CharacterPage/SpellTransfer";
 import dragon4 from "./dragon4.png";
-
 import RedDragon from "./RedDragon.png";
 import Image from "material-ui-image";
+import { Select } from "@mui/material";
 
 function App() {
   const [show_drawer, set_show_drawer] = useState(false);
@@ -88,6 +88,8 @@ function App() {
               <Route path="/blank_character" element={<BlankCharacter />} />
               <Route path="/SavedCharacters" element={<SavedCharacters />} />
               <Route path="/current_character" element={<new_character />} />
+              <Route path="/SpellTransfer" element={<SpellTransfer />} />
+              <Route path="/SkillTransfer" element={<skill_list />} />
               <Route path="/SignIn" element={<SignIn />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
             </Routes>

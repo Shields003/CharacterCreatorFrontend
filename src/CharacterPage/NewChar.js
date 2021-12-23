@@ -19,6 +19,9 @@ import useCharacter from "../hooks/useCharacter";
 import { Grid } from "@mui/material";
 
 import ComboBox from "../ComboBox";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import WeaponSelect from "../Functions/weapons";
 
 export default function InputAdornments() {
   const [values, setValues] = React.useState({
@@ -57,6 +60,8 @@ export default function InputAdornments() {
     hairColor: "",
     height: "",
     age: "",
+    mainWeapon: "",
+    startEquip: "",
   });
 
   const { character } = useCharacter();
@@ -710,6 +715,7 @@ export default function InputAdornments() {
                 sx={{ marginTop: "6px", marginBottom: "4px" }}
                 label="-SKILLS- "
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -775,17 +781,19 @@ export default function InputAdornments() {
             elevation={8}
             sx={{ backgroundColor: "rgba(255,255,255,.95)", border: "double" }}
           >
+            {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>weapons */}
             <TextField
               sx={{ marginTop: "4px" }}
               fullWidth
               label="-Main Hand-"
               id="standard-start-adornment"
+              value={character?.mainWeapon}
+              variant="standard"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start"></InputAdornment>
                 ),
               }}
-              variant="standard"
             />
             <TextField
               sx={{ marginTop: "4px" }}
@@ -813,6 +821,7 @@ export default function InputAdornments() {
                 sx={{ marginTop: "8px" }}
                 label="-EQUIPMENT- "
                 id="standard-start-adornment"
+                value={character?.startEquip}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -829,6 +838,7 @@ export default function InputAdornments() {
                   ),
                 }}
                 variant="standard"
+                value={character?.startEquip2}
               />
               <TextField
                 fullWidth
@@ -878,6 +888,7 @@ export default function InputAdornments() {
               sx={{ marginTop: "6px" }}
               label="-SPELLS- "
               id="standard-start-adornment"
+              value={character?.randSpell}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start"></InputAdornment>

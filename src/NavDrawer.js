@@ -17,6 +17,8 @@ import SaveIcon from "@mui/icons-material/Save";
 import PersonIcon from "@mui/icons-material/Person";
 import ArticleIcon from "@mui/icons-material/Article";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import SportsKabaddiIcon from "@mui/icons-material/SportsKabaddi";
 export default function NavDrawer(props) {
   const { character } = useCharacter();
   const [navList, set_navList] = useState([]);
@@ -32,6 +34,16 @@ export default function NavDrawer(props) {
           icon: <GroupAddIcon />,
         },
         {
+          text: "Spell List",
+          path: "/SpellTransfer",
+          icon: <AutoFixHighIcon />,
+        },
+        {
+          text: "Skill List",
+          path: "/skill_list",
+          icon: <SportsKabaddiIcon />,
+        },
+        {
           text: "Saved Characters",
           path: "SavedCharacters",
           icon: <SaveIcon />,
@@ -44,7 +56,7 @@ export default function NavDrawer(props) {
         },
         {},
         { text: "Blank Sheet", path: "blank_character", icon: <ArticleIcon /> },
-        { text: "Sign In", path: "SignIn", icon: <PersonAddAltIcon /> },
+        { text: "Sign In", path: "sign_in", icon: <PersonAddAltIcon /> },
       ]);
     } else {
       set_navList([
