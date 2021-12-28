@@ -40,7 +40,7 @@ export default function NavDrawer(props) {
         },
         {
           text: "Skill List",
-          path: "/skill_list",
+          path: "/SkillTransfer",
           icon: <SportsKabaddiIcon />,
         },
         {
@@ -48,7 +48,7 @@ export default function NavDrawer(props) {
           path: "SavedCharacters",
           icon: <SaveIcon />,
         },
-        { text: "Email Character", path: "EmailChar", icon: <MailIcon /> },
+
         {
           text: "Current Character",
           path: "new_character",

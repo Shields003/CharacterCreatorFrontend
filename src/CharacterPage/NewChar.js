@@ -17,12 +17,13 @@ import CharacterChoices from "../Components/CharacterChoices";
 import get_character_choices from "../Functions/character_choices";
 import useCharacter from "../hooks/useCharacter";
 import { Grid } from "@mui/material";
-
+import { Button } from "@mui/material";
 import ComboBox from "../ComboBox";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import WeaponSelect from "../Functions/weapons";
-
+import BasicTable from "../Functions/spell_table";
+import Save from "@mui/icons-material/Save";
 export default function InputAdornments() {
   const [values, setValues] = React.useState({
     // amount: "",
@@ -982,5 +983,14 @@ export default function InputAdornments() {
     </Container>
   );
 }
+<Button
+  sx={{ my: 0.5, backgroundColor: "rgba(255,255,255,.95)" }}
+  variant="outlined"
+  size="small"
+  onClick={Save}
+  aria-label="Save"
+>
+  Save;
+</Button>;
 
 // export default NewChar;

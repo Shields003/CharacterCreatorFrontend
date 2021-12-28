@@ -7,6 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import Save from "@mui/icons-material/Save";
 
 function not(a, b) {
   return a.filter((value) => b.indexOf(value) === -1);
@@ -18,6 +19,7 @@ function intersection(a, b) {
 
 export default function SpellTransfer() {
   const [checked, setChecked] = React.useState([]);
+  const [save] = React.useState([]);
   const [left, setLeft] = React.useState([
     "Lighting Bolt",
     "Acid Splash",
@@ -169,6 +171,16 @@ export default function SpellTransfer() {
             aria-label="move all left"
           >
             ≪
+          </Button>
+          <Button
+            sx={{ my: 0.5, backgroundColor: "rgba(255,255,255,.95)" }}
+            variant="outlined"
+            size="small"
+            onClick={save}
+            //disabled={right.length === 0}
+            aria-label="Save"
+          >
+            Save
           </Button>
         </Grid>
       </Grid>

@@ -89,7 +89,7 @@ function App() {
               <Route path="/SavedCharacters" element={<SavedCharacters />} />
               <Route path="/current_character" element={<new_character />} />
               <Route path="/SpellTransfer" element={<SpellTransfer />} />
-              <Route path="/SkillTransfer" element={<skill_list />} />
+              <Route path="/SkillTransfer" element={<SkillTransfer />} />
               <Route path="/SignIn" element={<SignIn />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
             </Routes>

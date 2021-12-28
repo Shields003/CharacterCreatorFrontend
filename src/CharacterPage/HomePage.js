@@ -20,6 +20,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Paper } from "@mui/material";
+import { Card } from "@mui/material";
+
 const HomePage = () => {
   return (
     <div>
@@ -87,47 +89,17 @@ export default function SignIn() {
   };
 
   return (
-    <Grid item xs={12}>
-      <Box
-        sx={{
-          display: "inline-flex",
-          position: "fixed",
-          border: "double",
-          borderColor: "maroon",
-          padding: "5px",
-          margin: "12px",
-          width: "100%",
-          minWidth: "1120px",
-          textalign: "center",
-          backgroundsize: "contain",
-          backgroundrepeat: "no-repeat",
-          backgroundposition: "center",
-          zindex: "-5",
-        }}
-      >
-        {/* <img
-          src="http://img2.joyreactor.com/pics/post/full/art-CGI-dragon-3329461.jpeg"
-          alt="Dragon"
-          style={{ margin: "0 auto", display: "flex" }}
-          position="fixed"
-          textalign="center"
-          width="100%"
-          backgroundsize="contain"
-          backgroundrepeat="no-repeat"
-          backgroundposition="center"
-          zindex="-5"
-        ></img> */}
-      </Box>
-
+    <Grid>
       <ThemeProvider theme={theme}>
         <Container
+          marginTop="8"
           component="main"
           maxWidth="xs"
           backgroundColor="rgba(255,255,255,.85)"
         >
           <CssBaseline />
           <div>
-            <Paper
+            <Card
               sx={{
                 zindex: 5,
                 backgroundColor: "rgba(255,255,255,.95)",
@@ -182,9 +154,7 @@ export default function SignIn() {
                     }}
                   >
                     <TextField
-                      sx={{
-                        backgroundColor: "rgba(255,255,255,.85)",
-                      }}
+                      sx={{}}
                       margin="normal"
                       required
                       fullWidth
@@ -223,7 +193,7 @@ export default function SignIn() {
                 </Box>
               </Box>
               <SignUp sx={{ mt: 8, mb: 4 }} />
-            </Paper>
+            </Card>
           </div>
         </Container>
       </ThemeProvider>
