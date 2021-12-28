@@ -28,6 +28,7 @@ const HomePage = () => {
       <Grid item xs={12}>
         <Box
           sx={{
+            marginTop: "2rem",
             position: "fixed",
             border: "double",
             borderColor: "maroon",
@@ -89,10 +90,10 @@ export default function SignIn() {
   };
 
   return (
-    <Grid>
+    <Grid sx={{ marginTop: "3.5rem" }}>
       <ThemeProvider theme={theme}>
         <Container
-          marginTop="8"
+          marginTop="2rem"
           component="main"
           maxWidth="xs"
           backgroundColor="rgba(255,255,255,.85)"
@@ -119,7 +120,7 @@ export default function SignIn() {
                   sx={{
                     backgroundColor: "rgba(255,255,255,.85)",
 
-                    marginTop: 10,
+                    marginTop: 5,
                     zindex: 10,
                   }}
                 >
@@ -147,14 +148,12 @@ export default function SignIn() {
                     autoComplete="email"
                     autoFocus
                   />
-                  <Box
-                    sx={{
-                      backgroundColor: "rgba(255,255,255,.85)",
-                      border: "double",
-                    }}
-                  >
+                  <Box sx={{}}>
                     <TextField
-                      sx={{}}
+                      sx={{
+                        backgroundColor: "rgba(255,255,255,.85)",
+                        border: "double",
+                      }}
                       margin="normal"
                       required
                       fullWidth
