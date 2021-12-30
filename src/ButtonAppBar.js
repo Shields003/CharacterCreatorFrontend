@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRecoilValue } from "recoil";
 import characterAtom from "./atoms/character_atom";
+import { border } from "@mui/system";
 const BACKEND = process.env.REACT_APP_BACKEND;
 
 export default function ButtonAppBar(props) {
@@ -48,18 +49,23 @@ export default function ButtonAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Mad Goat D&D Character Creator
+          </Typography>
           <Button
             variant="contained"
             color="secondary"
             onClick={test_button}
-            sx={{ marginRight: "1rem" }}
+            sx={{
+              marginRight: "2rem",
+              border: "double",
+              borderColor: "black",
+            }}
           >
             Save Character
           </Button>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Mad Goat D&D Character Creator
-          </Typography>
-          <h3 color="inherit">Guest </h3>
+          <h3 color="inherit">User Name </h3>
         </Toolbar>
       </AppBar>
     </Box>

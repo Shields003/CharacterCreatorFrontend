@@ -21,6 +21,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Paper } from "@mui/material";
 import { Card } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -88,7 +89,7 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
-
+  const navigate = useNavigate();
   return (
     <Grid sx={{ marginTop: "3.5rem" }}>
       <ThemeProvider theme={theme}>
@@ -104,7 +105,7 @@ export default function SignIn() {
               sx={{
                 zindex: 5,
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "ridge 8px",
               }}
               elevation={8}
             >
@@ -137,7 +138,7 @@ export default function SignIn() {
                   <TextField
                     sx={{
                       backgroundColor: "rgba(255,255,255,.85)",
-                      border: "double",
+                      border: "",
                     }}
                     margin="normal"
                     required
@@ -152,7 +153,7 @@ export default function SignIn() {
                     <TextField
                       sx={{
                         backgroundColor: "rgba(255,255,255,.85)",
-                        border: "double",
+                        border: "",
                       }}
                       margin="normal"
                       required
@@ -184,7 +185,13 @@ export default function SignIn() {
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link href="#" variant="body2">
+                      <Link
+                        sx={{ cursor: "pointer" }}
+                        onClick={() => {
+                          navigate("/SignUp");
+                        }}
+                        variant="body2"
+                      >
                         {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>

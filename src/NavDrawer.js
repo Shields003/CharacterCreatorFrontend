@@ -74,7 +74,7 @@ export default function NavDrawer(props) {
         },
         {},
         { text: "Blank Sheet", path: "blank_character", icon: <ArticleIcon /> },
-        { text: "Sign In", path: "SignIn", icon: <PersonAddAltIcon /> },
+        { text: "Sign Up", path: "SignUp", icon: <PersonAddAltIcon /> },
       ]);
     }
   }, [character]);

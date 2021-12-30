@@ -35,7 +35,7 @@ import NewChar from "./CharacterPage/NewChar";
 import HomePage from "./CharacterPage/HomePage";
 import BlankCharacter from "./CharacterPage/BlankCharacter";
 import SavedCharacters from "./CharacterPage/SavedCharacters";
-import SignIn from "./CharacterPage/SignIn";
+import SignUp from "./CharacterPage/SignUp";
 import "./App.css";
 import get_character_choices from "./Functions/character_choices";
 import GenChar from "./CharacterPage/GenChar";
@@ -90,7 +90,7 @@ function App() {
               <Route path="/current_character" element={<new_character />} />
               <Route path="/SpellTransfer" element={<SpellTransfer />} />
               <Route path="/SkillTransfer" element={<SkillTransfer />} />
-              <Route path="/SignIn" element={<SignIn />} />
+              <Route path="/SignUp" element={<SignUp />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
             </Routes>
             {/* </Box> */}

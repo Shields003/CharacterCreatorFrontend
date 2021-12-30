@@ -81,7 +81,7 @@ const NewChar = (props) => {
   console.log(character);
 
   return (
-    <Container sx={{ paddingTop: "2rem" }} maxWidth={"md"}>
+    <Container sx={{ paddingTop: "1rem" }} maxWidth={"md"}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Paper elevation={8}>
@@ -89,12 +89,13 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                // border: "double",
+                border: "groove 8px ",
               }}
               label=" - Character Name - "
               id="outlined-start-adornment"
               value={character.name}
-              disabled
+              //disabled
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start"></InputAdornment>
@@ -110,7 +111,7 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Gender-"
               id="outlined-start-adornment"
@@ -124,13 +125,13 @@ const NewChar = (props) => {
             />
           </Paper>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1.85}>
           <Paper elevation={8}>
             <TextField
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Level-"
               id="outlined-start-adornment"
@@ -151,7 +152,7 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Exerience Points-"
               id="outlined-start-adornment"
@@ -172,7 +173,7 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Race- "
               id="outlined-start-adornment"
@@ -193,7 +194,7 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Class- "
               id="outlined-start-adornment"
@@ -213,7 +214,7 @@ const NewChar = (props) => {
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Alignment- "
               id="outlined-start-adornment"
@@ -227,13 +228,13 @@ const NewChar = (props) => {
             />
           </Paper>
         </Grid>
-        <Grid item xs={1.5}>
+        <Grid item xs={1.35}>
           <Paper elevation={8}>
             <TextField
               fullWidth
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
               }}
               label="-Age- "
               id="outlined-start-adornment"
@@ -250,7 +251,11 @@ const NewChar = (props) => {
         <Grid item xs={6}>
           <Paper
             elevation={8}
-            sx={{ backgroundColor: "rgba(255,255,255,.95)", border: "double" }}
+            sx={{
+              backgroundColor: "rgba(255,255,255,.95)",
+              border: "groove 6px ",
+              margin: "0rem",
+            }}
           >
             <Grid
               container
@@ -258,7 +263,7 @@ const NewChar = (props) => {
               sx={{
                 margin: 0,
                 width: "calc(100% - 16px)",
-                paddingBottom: "16px",
+                paddingBottom: "24px",
               }}
             >
               <Grid item xs={3}>
@@ -598,15 +603,22 @@ const NewChar = (props) => {
         <Grid item xs={6}>
           <Paper
             elevation={8}
-            sx={{ backgroundColor: "rgba(255,255,255,.95)", border: "double" }}
+            sx={{
+              backgroundColor: "rgba(255,255,255,.95)",
+              border: "groove 6px ",
+              paddingLeft: "0px",
+              marginTop: "0px",
+            }}
           >
             <Grid
               container
               spacing={2}
               sx={{
                 margin: 0,
-                width: "calc(100% - 16px)",
+                width: "calc(100% - 20px)",
                 paddingBottom: "16px",
+
+                marginRight: "2rem",
               }}
             >
               <Grid item xs={3}>
@@ -716,7 +728,7 @@ const NewChar = (props) => {
               elevation={8}
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 6px ",
               }}
             >
               <TextField
@@ -788,7 +800,10 @@ const NewChar = (props) => {
         <Grid item xs={6}>
           <Card
             elevation={8}
-            sx={{ backgroundColor: "rgba(255,255,255,.95)", border: "double" }}
+            sx={{
+              backgroundColor: "rgba(255,255,255,.95)",
+              border: "groove 8px ",
+            }}
           >
             {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>weapons */}
             <TextField
@@ -822,7 +837,8 @@ const NewChar = (props) => {
               elevation={8}
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
-                border: "double",
+                border: "groove 8px ",
+                paddingBottom: "2rem",
               }}
             >
               <TextField
@@ -885,12 +901,16 @@ const NewChar = (props) => {
         <Grid
           item
           xs={6}
-          sx={{ paddingTop: "1rem", paddingLeftt: "1rem" }}
+          sx={{ paddingTop: "1rem", paddingBottom: "4rem" }}
           maxWidth={"md"}
         >
           <Paper
             elevation={8}
-            sx={{ backgroundColor: "rgba(255,255,255,.95)", border: "double" }}
+            sx={{
+              backgroundColor: "rgba(255,255,255,.95)",
+              border: "groove 8px ",
+              paddingBottom: "2.6rem",
+            }}
           >
             <TextField
               fullWidth
