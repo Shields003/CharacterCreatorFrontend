@@ -19,6 +19,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import SportsKabaddiIcon from "@mui/icons-material/SportsKabaddi";
+
 export default function NavDrawer(props) {
   const { character } = useCharacter();
   const [navList, set_navList] = useState([]);
@@ -90,6 +91,7 @@ export default function NavDrawer(props) {
               key={"nav-" + index}
               component={Link}
               to={item.path}
+              onClick={props.onClose}
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />

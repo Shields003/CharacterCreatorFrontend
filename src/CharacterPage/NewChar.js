@@ -1,31 +1,33 @@
-import * as React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Box from "@mui/material/Box";
+import React, { useEffect, useState } from "react";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Box from "@mui/material/Box";
 import { Card, Container, Paper } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import FilledInput from "@mui/material/FilledInput";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
+// import IconButton from "@mui/material/IconButton";
+// import Input from "@mui/material/Input";
+// import FilledInput from "@mui/material/FilledInput";
+// import OutlinedInput from "@mui/material/OutlinedInput";
+// import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
+// import FormHelperText from "@mui/material/FormHelperText";
+// import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import CharacterChoices from "../Components/CharacterChoices";
-import get_character_choices from "../Functions/character_choices";
+// import Visibility from "@mui/icons-material/Visibility";
+// import VisibilityOff from "@mui/icons-material/VisibilityOff";
+// import CharacterChoices from "../Components/CharacterChoices";
+// import get_character_choices from "../Functions/character_choices";
 import useCharacter from "../hooks/useCharacter";
 import { Grid } from "@mui/material";
 import { Button } from "@mui/material";
-import ComboBox from "../ComboBox";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import WeaponSelect from "../Functions/weapons";
-import BasicTable from "../Functions/spell_table";
+// import ComboBox from "../ComboBox";
+// import MenuItem from "@mui/material/MenuItem";
+// import Select from "@mui/material/Select";
+// import WeaponSelect from "../Functions/weapons";
+// import BasicTable from "../Functions/spell_table";
 import Save from "@mui/icons-material/Save";
-export default function InputAdornments() {
-  const [values, setValues] = React.useState({
+
+const NewChar = (props) => {
+  const blank = Boolean(props.blank);
+  const blank_character = {
     // amount: "",
     name: "",
     gender: "",
@@ -63,13 +65,19 @@ export default function InputAdornments() {
     age: "",
     mainWeapon: "",
     startEquip: "",
-  });
-
-  const { character } = useCharacter();
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
   };
+
+  let { character: saved_character } = useCharacter();
+  const [character, set_character] = useState(blank_character);
+
+  useEffect(() => {
+    if (!blank) {
+      set_character({ ...saved_character });
+    }
+  }, [saved_character]);
+  // const handleChange = (prop) => (event) => {
+  //   setValues({ ...values, [prop]: event.target.value });
+  // };
   console.log(character);
 
   return (
@@ -982,15 +990,6 @@ export default function InputAdornments() {
       </Grid>
     </Container>
   );
-}
-<Button
-  sx={{ my: 0.5, backgroundColor: "rgba(255,255,255,.95)" }}
-  variant="outlined"
-  size="small"
-  onClick={Save}
-  aria-label="Save"
->
-  Save;
-</Button>;
+};
 
-// export default NewChar;
+export default NewChar;

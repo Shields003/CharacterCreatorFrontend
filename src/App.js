@@ -85,7 +85,7 @@ function App() {
               {/* <Route path="/new_character_blank" element={<BlankCharacter />} /> */}
               <Route path="/" element={<HomePage />} />
               <Route path="/GenChar" element={<CharacterChoices />} />
-              <Route path="/blank_character" element={<BlankCharacter />} />
+              <Route path="/blank_character" element={<NewChar blank />} />
               <Route path="/SavedCharacters" element={<SavedCharacters />} />
               <Route path="/current_character" element={<new_character />} />
               <Route path="/SpellTransfer" element={<SpellTransfer />} />
