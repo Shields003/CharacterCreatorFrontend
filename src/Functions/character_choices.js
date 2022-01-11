@@ -30,6 +30,51 @@ const get_random_off = () => {
   ];
   return offWeapon[Math.floor(Math.random() * 7)];
 };
+const get_special = () => {
+  let specialWeapon = [
+    "of Lightning",
+    "of Flames",
+    "of Frost",
+    "of Defense",
+    "of Bleeding",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+    // "",
+  ];
+
+  return specialWeapon[Math.floor(Math.random() * 5)];
+};
+
+const get_weap_bonus = () => {
+  const bonusWeapon = [
+    "+1",
+    "+2",
+    "+3",
+    "+4",
+    "+5",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
+  return bonusWeapon[Math.floor(Math.random() * 16)];
+};
+
 const get_random_skill = () => {
   const randSkill = [
     "Athletics",
@@ -42,6 +87,7 @@ const get_random_skill = () => {
   ];
   return randSkill[Math.floor(Math.random() * 7)];
 };
+
 const get_random_spell = () => {
   const randSpell = [
     "Magic-Missile",
@@ -311,8 +357,11 @@ const get_character_choices = (count) => {
       eyeColor: get_random_eye(),
       hitPoints: hit_dice(level),
       mainWeapon: get_random_main(),
+      offWeapon: get_random_off(),
+      weapBonus: get_weap_bonus(),
+      specialWeapon: get_special(),
       randSpell: get_random_spell(),
-      randSkill: get_random_skill(),
+      randSkill: get_random_skill(level),
       startEquip: get_start_equipment(),
       startEquip2: get_start_equipment2(),
       expPoints,

@@ -24,6 +24,7 @@ import { Button } from "@mui/material";
 // import WeaponSelect from "../Functions/weapons";
 // import BasicTable from "../Functions/spell_table";
 import Save from "@mui/icons-material/Save";
+import WeaponSelect from "../Functions/weapons";
 
 const NewChar = (props) => {
   const blank = Boolean(props.blank);
@@ -710,7 +711,7 @@ const NewChar = (props) => {
               </Grid>
               <Grid item xs={3}>
                 <TextField
-                  label="THACO"
+                  label="THAC0"
                   id="outlined-start-adornment"
                   value={character?.thaco}
                   InputProps={{
@@ -747,6 +748,7 @@ const NewChar = (props) => {
               <TextField
                 fullWidth
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -757,6 +759,7 @@ const NewChar = (props) => {
               <TextField
                 fullWidth
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -767,6 +770,7 @@ const NewChar = (props) => {
               <TextField
                 fullWidth
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -777,6 +781,7 @@ const NewChar = (props) => {
               <TextField
                 fullWidth
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -787,6 +792,7 @@ const NewChar = (props) => {
               <TextField
                 fullWidth
                 id="standard-start-adornment"
+                value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -797,56 +803,196 @@ const NewChar = (props) => {
             </Paper>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Card
-            elevation={8}
-            sx={{
-              backgroundColor: "rgba(255,255,255,.95)",
-              border: "groove 8px ",
-            }}
+
+        <Grid container spacing={1} marginTop="4px">
+          <Grid item xs={2.85} marginLeft="14px">
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  // border: "double",
+                  border: "groove 3px ",
+                }}
+                label=" - Main Weapon - "
+                id="outlined-start-adornment"
+                value={character?.mainWeapon}
+                //disabled
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="-Special-"
+                id="outlined-start-adornment"
+                value={character?.specialWeapon}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={2}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="-Bonus-"
+                id="outlined-start-adornment"
+                value={character?.weapBonus}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={2.85}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="- Damage -"
+                id="outlined-start-adornment"
+                value={"1-8"}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={2.85} marginLeft="14px">
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  marginTop: "-4px",
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  // border: "double",
+                  border: "groove 3px ",
+                }}
+                label=" - Off-Hand Weapon - "
+                id="outlined-start-adornment"
+                value={character?.offWeapon}
+                //disabled
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  marginTop: "-4px",
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="-Special-"
+                id="outlined-start-adornment"
+                value={character?.specialWeapon}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={2}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  marginTop: "-4px",
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="-Bonus-"
+                id="outlined-start-adornment"
+                value={character?.weapBonus}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={2.85}>
+            <Paper elevation={8}>
+              <TextField
+                fullWidth
+                sx={{
+                  marginTop: "-4px",
+                  backgroundColor: "rgba(255,255,255,.95)",
+                  border: "groove 3px ",
+                }}
+                label="- Damage -"
+                id="outlined-start-adornment"
+                value={"1-8"}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+            </Paper>
+          </Grid>
+
+          <Grid
+            item
+            xs={11.85}
+            sx={{ marginTop: "4px", paddingTop: "2rem", marginLeft: "14px" }}
+            maxWidth={"md"}
           >
-            {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>weapons */}
-            <TextField
-              sx={{ marginTop: "4px" }}
-              fullWidth
-              label="-Main Hand-"
-              id="standard-start-adornment"
-              value={character?.mainWeapon}
-              variant="standard"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start"></InputAdornment>
-                ),
-              }}
-            />
-            <TextField
-              sx={{ marginTop: "4px" }}
-              fullWidth
-              label="-Off Hand-"
-              id="standard-start-adornment"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start"></InputAdornment>
-                ),
-              }}
-              variant="standard"
-            />
-          </Card>
-          <Grid item sx={{ paddingTop: "1rem" }}>
             <Paper
               elevation={8}
               sx={{
                 backgroundColor: "rgba(255,255,255,.95)",
                 border: "groove 8px ",
-                paddingBottom: "2rem",
               }}
             >
               <TextField
                 fullWidth
-                sx={{ marginTop: "8px" }}
-                label="-EQUIPMENT- "
+                sx={{ marginTop: "10px", marginBottom: "4px" }}
+                label="-Equipment- "
                 id="standard-start-adornment"
-                value={character?.startEquip}
+                //value={character?.randSkill}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -863,7 +1009,26 @@ const NewChar = (props) => {
                   ),
                 }}
                 variant="standard"
-                value={character?.startEquip2}
+              />
+              <TextField
+                fullWidth
+                id="standard-start-adornment"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
+              />
+              <TextField
+                fullWidth
+                id="standard-start-adornment"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start"></InputAdornment>
+                  ),
+                }}
+                variant="standard"
               />
               <TextField
                 fullWidth
@@ -898,7 +1063,7 @@ const NewChar = (props) => {
             </Paper>
           </Grid>
         </Grid>
-        <Grid
+        {/* <Grid
           item
           xs={6}
           sx={{ paddingTop: "1rem", paddingBottom: "4rem" }}
@@ -1004,9 +1169,9 @@ const NewChar = (props) => {
                 ),
               }}
               variant="standard"
-            />
-          </Paper>
-        </Grid>
+            /> */}
+        {/* </Paper>
+        </Grid> */}
       </Grid>
     </Container>
   );
