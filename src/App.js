@@ -42,8 +42,8 @@ import GenChar from "./CharacterPage/GenChar";
 import CharacterChoices from "./Components/CharacterChoices";
 import { Box } from "@mui/system";
 import SpellTransfer from "./CharacterPage/SpellTransfer";
-import dragon4 from "./dragon4.png";
-import RedDragon from "./RedDragon.png";
+import dragon4 from "./images/dragon4.png";
+import RedDragon from "./images/RedDragon.png";
 import Image from "material-ui-image";
 import { Select } from "@mui/material";
 

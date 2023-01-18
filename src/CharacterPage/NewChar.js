@@ -1,32 +1,24 @@
 import React, { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Box from "@mui/material/Box";
-import { Card, Container, Paper } from "@mui/material";
-// import IconButton from "@mui/material/IconButton";
-// import Input from "@mui/material/Input";
-// import FilledInput from "@mui/material/FilledInput";
-// import OutlinedInput from "@mui/material/OutlinedInput";
-// import InputLabel from "@mui/material/InputLabel";
+import { Container, Paper } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
-// import FormHelperText from "@mui/material/FormHelperText";
-// import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-// import Visibility from "@mui/icons-material/Visibility";
-// import VisibilityOff from "@mui/icons-material/VisibilityOff";
-// import CharacterChoices from "../Components/CharacterChoices";
-// import get_character_choices from "../Functions/character_choices";
 import useCharacter from "../hooks/useCharacter";
 import { Grid } from "@mui/material";
-import { Button } from "@mui/material";
-// import ComboBox from "../ComboBox";
-// import MenuItem from "@mui/material/MenuItem";
-// import Select from "@mui/material/Select";
+import weapons from "../Equipment/weapons";
+import randomWeapon from "../Equipment/weapons";
+import equipEffects from "../Equipment/equipEffects";
+import getEffect from "../Equipment/equipEffects";
+
+
+// import Save from "@mui/icons-material/Save";
 // import WeaponSelect from "../Functions/weapons";
-// import BasicTable from "../Functions/spell_table";
-import Save from "@mui/icons-material/Save";
-import WeaponSelect from "../Functions/weapons";
+// let mainWeapon = randomWeapon();
+// let offWeapon = randomWeapon();
 
 const NewChar = (props) => {
+  let mainWeapon = randomWeapon();
+  let offWeapon = randomWeapon();
+  let effect = getEffect();
   const blank = Boolean(props.blank);
   const blank_character = {
     // amount: "",
@@ -66,6 +58,8 @@ const NewChar = (props) => {
     age: "",
     mainWeapon: "",
     startEquip: "",
+    weapons: "",
+    effects: "",
   };
 
   let { character: saved_character } = useCharacter();
@@ -79,7 +73,6 @@ const NewChar = (props) => {
   // const handleChange = (prop) => (event) => {
   //   setValues({ ...values, [prop]: event.target.value });
   // };
-  console.log(character);
 
   return (
     <Container sx={{ paddingTop: "1rem" }} maxWidth={"md"}>
@@ -816,7 +809,8 @@ const NewChar = (props) => {
                 }}
                 label=" - Main Weapon - "
                 id="outlined-start-adornment"
-                value={character?.mainWeapon}
+                //display weapon from the weapons.js file
+                value={mainWeapon.Name}
                 //disabled
                 InputProps={{
                   startAdornment: (
@@ -837,7 +831,7 @@ const NewChar = (props) => {
                 }}
                 label="-Special-"
                 id="outlined-start-adornment"
-                value={character?.specialWeapon}
+                // value={effect}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -877,7 +871,7 @@ const NewChar = (props) => {
                 }}
                 label="- Damage -"
                 id="outlined-start-adornment"
-                value={"1-8"}
+                value={mainWeapon.Damage}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -899,7 +893,7 @@ const NewChar = (props) => {
                 }}
                 label=" - Off-Hand Weapon - "
                 id="outlined-start-adornment"
-                value={character?.offWeapon}
+                value={offWeapon.Name}
                 //disabled
                 InputProps={{
                   startAdornment: (
@@ -921,7 +915,7 @@ const NewChar = (props) => {
                 }}
                 label="-Special-"
                 id="outlined-start-adornment"
-                value={character?.specialWeapon}
+                value={offWeapon.Name}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -963,7 +957,7 @@ const NewChar = (props) => {
                 }}
                 label="- Damage -"
                 id="outlined-start-adornment"
-                value={"1-8"}
+                value={offWeapon.Damage}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
@@ -992,7 +986,7 @@ const NewChar = (props) => {
                 sx={{ marginTop: "10px", marginBottom: "4px" }}
                 label="-Equipment- "
                 id="standard-start-adornment"
-                //value={character?.randSkill}
+                value={character?.equipment}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start"></InputAdornment>
